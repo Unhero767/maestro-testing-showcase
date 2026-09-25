@@ -1,0 +1,24 @@
+appId: ${appId}
+---
+- runFlow: 
+    file: ../../modules/states/standard_login.yaml
+    env:
+      TEST_USER: "sorting_validator@showcase.com"
+
+# Step 1: Open the Sort/Filter Drawer
+- tapOn: "Sort Options"
+- assertVisible: "Sort by Price"
+
+# Step 2: Apply Descending Sort (High to Low)
+- tapOn: "Price: High to Low"
+- tapOn: "Apply Filters"
+
+# Step 3: Assert Visual Sequence Integrity via Indexing
+- assertVisible:
+    id: "product_title_item"
+    index: 0
+    text: "Ultra-Tier Server Blade"
+- assertVisible:
+    id: "product_title_item"
+    index: 1
+    text: "Enterprise Core Unit"

@@ -1,0 +1,9 @@
+appId: ${appId}
+---
+- assertVisible: "Welcome Back"
+- tapOn: "Email Input"
+- inputText: ${TEST_USER}
+- tapOn: "Password Input"
+- inputText: "SecureTestPassword123!"
+- tapOn: "Sign In Button"
+- runFlow: ../navigation/global_nav.yaml

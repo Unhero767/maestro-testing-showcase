@@ -1,0 +1,6 @@
+appId: ${appId}
+---
+- launchApp:
+    clearState: true
+- assertVisible: "Welcome Back"
+- stopApp

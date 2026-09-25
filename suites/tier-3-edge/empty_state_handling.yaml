@@ -1,0 +1,8 @@
+appId: ${appId}
+---
+- runFlow: ../../modules/states/standard_login.yaml
+- tapOn: "Search Bar"
+- inputText: "NonExistentProductZXY999"
+- pressKey: Enter
+- assertVisible: "No results found"
+- assertVisible: "Clear Search Filter"

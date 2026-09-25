@@ -1,0 +1,27 @@
+name: Maestro Sorted Regression Suite
+
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+
+jobs:
+  evaluate-tiers:
+    runs-on: macos-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        tier: [ 'tier-1-smoke', 'tier-2-functional', 'tier-3-edge' ]
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Install Maestro CLI
+        run: curl -Ls "https://get.maestro.mobile.dev" | bash
+
+      - name: Run Tier Suite (${{ matrix.tier }})
+        env:
+          MAESTRO_CLI_SHOW_CLI_TIMINGS: "true"
+        run: |
+          maestro test --config config/env.staging.yaml suites/${{ matrix.tier }}
