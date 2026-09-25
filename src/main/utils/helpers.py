@@ -1,4 +1,6 @@
-"""Reusable utility helpers."""
+"""Utility helper functions."""
 
-def sanitize_payload(payload: dict) -> dict:
-    return {k: v for k, v in payload.items() if v is not None}
+
+def sanitize_payload(payload: str) -> str:
+    """Clean up and sanitize incoming string payloads."""
+    return payload.strip().lower()

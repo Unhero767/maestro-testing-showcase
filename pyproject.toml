@@ -1,16 +1,23 @@
 [build-system]
-requires = ["setuptools>=68.0.0"]
+requires = ["setuptools>=61.0.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "smart-testing-showcase"
 version = "0.1.0"
-description = "Production-grade testing architecture showcase"
+description = "A showcase project for smart testing in Python"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 dependencies = [
-    "pytest>=8.0.0",
+    "pytest",
+    "flake8",
+    "sphinx",
 ]
+
+[tool.black]
+line-length = 88
+target-version = ['py311']
+include = '\.pyi?$'
 
 [tool.pytest.ini_options]
 minversion = "6.0"
@@ -18,3 +25,4 @@ addopts = "-ra -q"
 testpaths = [
     "tests",
 ]
+asyncio_default_fixture_loop_scope = "function"

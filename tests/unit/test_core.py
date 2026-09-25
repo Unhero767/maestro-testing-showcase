@@ -1,5 +1,7 @@
 from src.main.core.engine import CoreEngine
 
-def test_engine_evaluation(sample_payload):
-    engine = CoreEngine()
-    assert engine.evaluate(sample_payload) is True
+
+def test_core_engine_execution():
+    engine = CoreEngine("2.0.0")
+    assert engine.version == "2.0.0"
+    assert "2.0.0" in engine.execute()

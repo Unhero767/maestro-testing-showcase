@@ -1,9 +1,9 @@
-"""Core business logic engine."""
+"""Core engine module."""
+
 
 class CoreEngine:
-    def __init__(self, name: str = "SmartEngine"):
-        self.name = name
-        self.active = True
+    def __init__(self, version: str = "1.0.0"):
+        self.version = version
 
-    def evaluate(self, data: dict) -> bool:
-        return self.active and bool(data)
+    def execute(self) -> str:
+        return f"CoreEngine executing at version {self.version}"

@@ -1,0 +1,14 @@
+:root {
+  --md-primary-fg-color: #0f172a;
+  --md-accent-fg-color: #38bdf8;
+}
+
+/* Cathedral-Engine Monolithic Registry Inscriptions */
+.md-typeset h1, .md-typeset h2, .md-typeset h3 {
+  letter-spacing: -0.025em;
+  font-variant-numeric: tabular-nums;
+}
+
+body {
+  background-color: #020617;
+}

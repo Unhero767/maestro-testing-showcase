@@ -1,8 +1,9 @@
-"""Interface and adapters for external services/databases."""
+"""Data adapter service module."""
+
 
 class DataAdapter:
-    def __init__(self, connection_string: str):
-        self.connection_string = connection_string
+    def __init__(self, endpoint: str = "localhost"):
+        self.endpoint = endpoint
 
-    def connect(self) -> bool:
-        return len(self.connection_string) > 0
+    def fetch_data(self) -> dict:
+        return {"status": "connected", "endpoint": self.endpoint}

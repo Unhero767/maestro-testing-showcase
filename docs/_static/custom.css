@@ -1,0 +1,9 @@
+/* Custom Sphinx Read the Docs Theme Styles */
+.wy-side-nav-search {
+  background-color: #0f172a;
+}
+
+.wy-nav-content {
+  background-color: #020617;
+  color: #f8fafc;
+}

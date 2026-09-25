@@ -1,4 +1,5 @@
 """Script that categorizes/sorts tests by tag, speed, or dependency."""
+
 import sys
 import pytest
 

@@ -1,0 +1,17 @@
+site_name: Smart Testing Showcase
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: blue
+      accent: pink
+  logo: images/logo.png
+  favicon: images/favicon.ico
+nav:
+  - Home: index.md
+  - Usage: usage.md
+  - API Reference: api.md
+plugins:
+  - search
+extra_css:
+  - stylesheets/extra.css
