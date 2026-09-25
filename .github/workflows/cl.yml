@@ -1,4 +1,3 @@
-
 name: CI
 
 on:
@@ -46,7 +45,8 @@ jobs:
       with:
         name: coverage-report
         path: coverage.xml
-	    - name: Format code with black
+
+    - name: Format code with black
       run: |
         pip install black
         black --check src tests
